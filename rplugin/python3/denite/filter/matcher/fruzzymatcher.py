@@ -41,7 +41,7 @@ class Filter(Base):
                 self.debug("and then check if you have fruzzy_mod.so or fruzzy_mod.pyd at %s" %
                            pkgPath)
                 self.useNative = False
-        self.debug("usenative: %s" % self.useNative)
+        #self.debug("usenative: %s" % self.useNative)
 
     def filter(self, context):
         candidates = context['candidates']
@@ -80,7 +80,7 @@ class Filter(Base):
                 relname = path.relpath(fname, start=d)
             except ValueError:
                 relname = fname
-                self.debug("buffer: %s, '%s'" % (relname, d))
+                #self.debug("buffer: %s, '%s'" % (relname, d))
         if self.useNative:
             idxArr = self.nativeMethod(q, [key(d) for d in c],
                                        relname, limit, ispath)
